@@ -1,4 +1,4 @@
 
 
-https://github.com/OlenaKudria/Doodle-Jump/assets/87021374/866897e8-2b65-4bce-98a1-e9a822f88a96
+https://github.com/OlenaKudria/Doodle-Jump/assets/87021374/c7369eac-71d6-4bad-ad89-451c178e64ed
 
