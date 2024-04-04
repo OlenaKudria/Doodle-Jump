@@ -19,7 +19,7 @@ namespace Player
 
         private void Move()
         {
-           player.velocity = new Vector2(inputManager.HorizontalInput * moveSpeed, player.velocity.y);
+            player.velocity = new Vector2(inputManager.HorizontalInput * moveSpeed, player.velocity.y);
         }
 
         private void Jump()
