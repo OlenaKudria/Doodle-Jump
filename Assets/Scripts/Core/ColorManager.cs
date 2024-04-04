@@ -1,13 +1,24 @@
+using System.Collections.Generic;
+using Platforms;
 using UnityEngine;
 
 namespace Core
 {
     public class ColorManager : MonoBehaviour
     {
-        public static void ChangeColor(GameObject gameObject)
+        [SerializeField] private List<SpriteRenderer> platforms;
+        [SerializeField] private SpriteRenderer player;
+        [SerializeField] private SpriteRenderer background;
+        
+        private void OnEnable() => PlatformTrigger.OnPlatformTrigger += ChangeColor;
+        
+        private void ChangeColor()
         {
-            SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-            spriteRenderer.color = GetRandomColor();
+            foreach (SpriteRenderer platform in platforms)
+                platform.color = GetRandomColor();
+            
+            player.color = GetRandomColor();
+            background.color = GetRandomColor();
         }
 
         private static Color GetRandomColor()
@@ -18,5 +29,7 @@ namespace Core
             
             return new Color(r, g, b);
         }
+        
+        private void OnDisable() => PlatformTrigger.OnPlatformTrigger -= ChangeColor;
     }
 }
